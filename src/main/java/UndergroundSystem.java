@@ -50,12 +50,14 @@ class UndergroundSystem {
     public double getAverageTime(String startStation, String endStation) {
         String trip = startStation + ", " + endStation;
         List<Integer> list = tripsMap.getOrDefault(trip, new ArrayList<Integer>());
-        if (list.size() == 0)
+        if (list.size() == 0) {
             return 0;
+        }
         int size = list.size();
         double sum = 0;
-        for (int time : list)
+        for (int time : list) {
             sum += time;
+        }
         return sum / size;
     }
 }
